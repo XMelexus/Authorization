@@ -29,7 +29,6 @@ namespace Authorization
             PasswordCheck.PasswordCheck passwordCheck = new PasswordCheck.PasswordCheck();
 
             passwordCheck.Error += ErrorMessage;
-            //passwordCheck.Success += SuccessMessage;
 
             string password = input_Password.Password;
             bool checkLength = passwordCheck.CheckLength(password);
@@ -57,30 +56,29 @@ namespace Authorization
             }
         }
 
-        private IEnumerator input_Password_PasswordChanged(object sender, RoutedEventArgs e)
+        private void input_Password_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            //PasswordCheck passwordCheck = new PasswordCheck();
-            PasswordCheck.PasswordCheck passwordCheck = new PasswordCheck.PasswordCheck();
-            if (input_RepeatPassword == null)
+            if (input_RepeatPassword.Password == "")
             {
+                lable_Password_Check.Foreground = Brushes.Black;
                 lable_Password_Check.Text = "";
-                yield return Enumerator();
             }
-            else if (input_Password != input_RepeatPassword)
+            else if (input_Password.Password != input_RepeatPassword.Password)
             {
+                lable_Password_Check.Foreground = Brushes.Red;
                 lable_Password_Check.Text = "Пароли не совпадают";
-                yield return Enumerator();
             }
-            else if (input_Password == input_RepeatPassword)
+            else if (input_Password.Password == input_RepeatPassword.Password)
             {
+                lable_Password_Check.Foreground = Brushes.Green;
                 lable_Password_Check.Text = "Пароли совпадают";
-                yield return Enumerator();
             }
         }
 
         private void ErrorMessage(string message)
         {
-            MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            lable_Password_Check.Foreground = Brushes.Red;
+            lable_Password_Check.Text = message;
         }
 
         private void SuccessMessage(string message)
@@ -88,9 +86,23 @@ namespace Authorization
             MessageBox.Show(message, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
-        private IEnumerator Enumerator()
+        private void input_RepeatPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
-            yield return lable_Password_Check.Text;
+            if (input_RepeatPassword.Password == "")
+            {
+                lable_Password_Check.Foreground = Brushes.Black;
+                lable_Password_Check.Text = "";
+            }
+            else if (input_Password.Password != input_RepeatPassword.Password)
+            {
+                lable_Password_Check.Foreground = Brushes.Red;
+                lable_Password_Check.Text = "Пароли не совпадают";
+            }
+            else if (input_Password.Password == input_RepeatPassword.Password)
+            {
+                lable_Password_Check.Foreground = Brushes.Green;
+                lable_Password_Check.Text = "Пароли совпадают";
+            }
         }
     }
 }

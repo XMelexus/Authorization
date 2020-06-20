@@ -13,11 +13,11 @@
         <TextBlock x:Name="label_Password" Text="Пароль" HorizontalAlignment="Left" Margin="40,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18"/>
         <PasswordBox x:Name="input_Password" HorizontalAlignment="Center" Margin="0,234,0,0" VerticalAlignment="Top" Width="420" FontSize="18" PasswordChanged="input_Password_PasswordChanged"/>
         <TextBlock x:Name="label_RepeatPassword" Text="Повторите пароль" HorizontalAlignment="Left" Margin="40,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18"></TextBlock>
-        <PasswordBox x:Name="input_RepeatPassword" HorizontalAlignment="Center" Margin="0,294,0,0" VerticalAlignment="Top" Width="420" FontSize="18"/>
+        <PasswordBox x:Name="input_RepeatPassword" HorizontalAlignment="Center" Margin="0,294,0,0" VerticalAlignment="Top" Width="420" FontSize="18" PasswordChanged="input_RepeatPassword_PasswordChanged"/>
         <Button x:Name="button_SignUp" Content="Отправить" HorizontalAlignment="Left" Margin="40,346,0,0" VerticalAlignment="Top" FontSize="18" BorderBrush="Black" Background="{x:Null}" Width="130" Click="button_SignUp_Click"/>
         <Button x:Name="button_Clear" Content="Очистить" HorizontalAlignment="Center" Margin="0,346,0,0" VerticalAlignment="Top" FontSize="18" Background="{x:Null}" BorderBrush="Black" Width="130" Click="button_Clear_Click"/>
         <Button x:Name="button_Cancel" Content="Отмена" HorizontalAlignment="Left" Margin="330,346,0,0" VerticalAlignment="Top" FontSize="18" Background="{x:Null}" BorderBrush="Black" Width="130" Click="button_Cancel_Click"/>
-        <TextBlock x:Name="lable_Password_Check" HorizontalAlignment="Left" Margin="309,273,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
+        <TextBlock x:Name="lable_Password_Check" HorizontalAlignment="Left" Margin="228,260,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="232" Height="34"/>
 
 
     </Grid>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -56,11 +57,25 @@ namespace Authorization
             }
         }
 
-        private void input_Password_PasswordChanged(object sender, RoutedEventArgs e)
+        private IEnumerator input_Password_PasswordChanged(object sender, RoutedEventArgs e)
         {
             //PasswordCheck passwordCheck = new PasswordCheck();
             PasswordCheck.PasswordCheck passwordCheck = new PasswordCheck.PasswordCheck();
-            
+            if (input_RepeatPassword == null)
+            {
+                lable_Password_Check.Text = "";
+                yield return Enumerator();
+            }
+            else if (input_Password != input_RepeatPassword)
+            {
+                lable_Password_Check.Text = "Пароли не совпадают";
+                yield return Enumerator();
+            }
+            else if (input_Password == input_RepeatPassword)
+            {
+                lable_Password_Check.Text = "Пароли совпадают";
+                yield return Enumerator();
+            }
         }
 
         private void ErrorMessage(string message)
@@ -71,6 +86,11 @@ namespace Authorization
         private void SuccessMessage(string message)
         {
             MessageBox.Show(message, "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private IEnumerator Enumerator()
+        {
+            yield return lable_Password_Check.Text;
         }
     }
 }

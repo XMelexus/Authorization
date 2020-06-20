@@ -17,6 +17,7 @@
         <Button x:Name="button_SignUp" Content="Отправить" HorizontalAlignment="Left" Margin="40,346,0,0" VerticalAlignment="Top" FontSize="18" BorderBrush="Black" Background="{x:Null}" Width="130" Click="button_SignUp_Click"/>
         <Button x:Name="button_Clear" Content="Очистить" HorizontalAlignment="Center" Margin="0,346,0,0" VerticalAlignment="Top" FontSize="18" Background="{x:Null}" BorderBrush="Black" Width="130" Click="button_Clear_Click"/>
         <Button x:Name="button_Cancel" Content="Отмена" HorizontalAlignment="Left" Margin="330,346,0,0" VerticalAlignment="Top" FontSize="18" Background="{x:Null}" BorderBrush="Black" Width="130" Click="button_Cancel_Click"/>
+        <TextBlock x:Name="lable_Password_Check" HorizontalAlignment="Left" Margin="309,273,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"/>
 
 
     </Grid>
